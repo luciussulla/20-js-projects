@@ -20,26 +20,68 @@ const showSuccess = (input)=> {
 }
 
 // chec if email is valud 
-const isValidEmail = email => {
+const checkEmail = email => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    if(re.test(String(email.value.trim()).toLowerCase())) {
+      showSuccess(email)
+    } else {
+      showError(email, 'Email is not valid')
+    }
+}
+
+// capitalize a string
+const capitalize = (str)=> {
+  str = str.toLowerCase()
+  return str.charAt(0).toUpperCase() + str.slice(1); 
+}
+
+// chek required fields
+const checkRequired = (inputArr)=> {
+  inputArr.forEach(input=> {
+    if(input.value.trim()==='') {
+      showError(input, capitalize(input.id)+' is required'); 
+    } else {
+      showSuccess(input); 
+    }
+  })
+}
+ 
+// check length of fields 
+const checkLength = (input, min, max) => {
+  if(input.value.length < min) {
+    showError(input, `${capitalize(input.id)} mus be at least ${min} characters`)
+  } else if(input.value.length>max) {
+    showError(input,  `${capitalize(input.id)} can not be more than ${max} characters`)
+  } else {
+    showSuccess(input)
+  }
+}
+
+const validatePasswords = (password, password2)=> {
+
+  if(password.value !== password2.value) {
+    showError(password2, 'Passwords do not match')
+  }
 }
 
 // event listeners 
 form.addEventListener('submit', (e)=> {
     e.preventDefault()
+    checkRequired([username, password, password2, email])
+    checkLength(username, 3, 15)
+    checkLength(password, 6, 25)
+    checkLength(password2, 6, 25)
+    checkEmail(email)
+    validatePasswords(password, password2)
+})
 
+/* 
     if(username.value==='') {
       showError(username, 'Username is required')
     } else {
       showSuccess(username); 
     }
 
-    
-
-})
-
-/* 
     if(email.value==='') {
       showError(email, 'Email is required')
     } else if(!isValidEmail(email.value)) {
