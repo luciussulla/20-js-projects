@@ -24,6 +24,8 @@ function calculate() {
     const rate = data.rates[currency_two]; 
 
     console.log(rate); 
+
+    RTCDataChannelEvent.innerText =  `1 ${currency_one} = ${rate} ${currency_two}`
   })
 
 }
