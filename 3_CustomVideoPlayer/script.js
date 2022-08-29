@@ -1,3 +1,10 @@
+// video API
+// video.currentTime 
+// video.duration 
+// video.play bool 
+// video.pause bool
+// video.timeupdate
+
 const video = document.getElementById('video'); 
 const play = document.getElementById('play'); 
 const stopIt = document.getElementById('stop'); 
@@ -24,12 +31,28 @@ function updatePlayIcon() {
 
 // update progress & timestamp 
 function updateProgress() {
-  return true
+  console.log(video.currentTime); 
+
+  progress.value = (video.currentTime / video.duration ) * 100; 
+
+  // get minutes 
+  let mins = Math.floor(video.currentTime) / 60;
+  if(mins < 10) {
+    mins = '0' + String(mins)
+  } 
+
+  // let secs
+  let secs = Math.floor(video.currentTime) % 60; 
+  if(secs < 10) {
+    secs = '0' + String(secs)
+  } 
+  
+  timestamp.innerHTML= `${mins}:${secs}`; 
 }
 
-// Set video time to progress 
+// When you touch the progress bar and move it. Set video time to progress 
 function setVideoProgress() {
-  return true
+  video.currentTime = (+progress.value * video.duration) / 100; 
 }
 
 // Stop video 
