@@ -36,13 +36,14 @@ p {
   font-size: 12px; 
   padding: 5px 12px; 
 }
+
 .money-img {
   width: 150px; 
 }
 
 .currency {
   padding: 40px 0; 
-
+  
   display: flex; 
   align-items: center; 
   justify-content: space-between;
@@ -80,6 +81,7 @@ p {
 select:focus, input:focus, button:focus {
   outline: 0; 
 }
+
 
 @media (max-width: 600px) {
   .currency input {
