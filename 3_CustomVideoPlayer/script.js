@@ -40,13 +40,13 @@ function updateProgress() {
   if(mins < 10) {
     mins = '0' + String(mins)
   } 
-
+  
   // let secs
   let secs = Math.floor(video.currentTime) % 60; 
   if(secs < 10) {
     secs = '0' + String(secs)
   } 
-  
+
   timestamp.innerHTML= `${mins}:${secs}`; 
 }
 
