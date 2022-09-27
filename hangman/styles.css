@@ -27,11 +27,11 @@ h1 {
   height: 350px; 
   width: 450px; 
 
-  border: 1px solid red; 
+  /* border: 1px solid red;  */
 }
 
 .figure-container {
-  border: 1px solid white; 
+  /* border: 1px solid white;  */
   fill: transparent; 
   stroke: #fff; 
   stroke-width: 4px; 
@@ -51,7 +51,7 @@ h1 {
   flex-direction: column;
   text-align: right;
 
-  border: 1px solid green; 
+  /* border: 1px solid green;  */
 }
 
 .wrong-letters-container span {
@@ -65,7 +65,7 @@ h1 {
   left: 50%; 
   transform: translateX(-50%); 
 
-  border: 1px solid blue; 
+  /* border: 1px solid blue;  */
 }
 
 .letter {
@@ -91,7 +91,6 @@ h1 {
   left:0; 
   right: 0; 
 
-  display: flex; 
   display: none;
   align-items: center;
   justify-content: center; 
