@@ -48,7 +48,7 @@ function addMealToDom (meal) {
 
   for (let i =1; i<=20; i++) {
     if(meal[`strIngredient${i}`]) {
-      ingredients.push(`${meal[`strIngredient[${i}]`]} - ${meal[`strMeasure${i}`]}`)
+      ingredients.push(`${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`)
     } else {
       break
     }
@@ -93,7 +93,8 @@ function getRandomMeal() {
 
   fetch(`https://www.themealdb.com/api/json/v1/1/random.php`)
   .then(res => res.json())
-  .then(data=> {
+  .then(data => {
+    console.log(data); 
     const meal = data.meals[0]; 
     addMealToDom(meal); 
   })
