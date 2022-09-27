@@ -43,7 +43,6 @@ function searchMeal(e) {
 }    
 
 // Add meal to DOM 
-
 function addMealToDom (meal) {
   const ingredients = []; 
 
