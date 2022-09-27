@@ -98,26 +98,45 @@ input[type="text"] {
 }
 
 @media(max-width: 800px) {
-
+  .meals {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media(max-width: 700px) {
-  
+  .meals {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meal {
+    height: 200px; 
+    width: 200px; 
+  }
 }
 
 @media(max-width: 500px) {
   input[type="text"] {
     width: 100%; 
   }
+  
+  .meals {
+    grid-template-columns: 1fr;
+  }
+
+  .meal {
+    height: 300px; 
+    width: 300px; 
+  }
 }
 
-/* SIngle meal */ 
+/* Single meal */ 
 .single-meal {
   margin: 30px auto; 
   width: 70%; 
+  border: 1px solid red; 
 }
 
-.single-meal image {
+.single-meal img {
   width: 300px; 
   margin: 15px; 
   border: 4px #fff solid; 
