@@ -53,7 +53,7 @@ function removeTransaction(id) {
    }); 
 
    updateLocalStorage(); // Here we can optionally also update the local storage
-   
+
   init(); 
 }
 
