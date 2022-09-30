@@ -17,7 +17,7 @@ async function showPosts() {
   const posts = await getPosts(); 
   
   console.log(posts); 
-  
+
   posts.forEach(post=> {
     const postEl = document.createElement('div'); 
     postEl.classList.add('post'); 
@@ -31,6 +31,33 @@ async function showPosts() {
     postsContainer.appendChild(postEl); 
   })
 }
+ 
+// show Loader  and fetch posts 
+function showLoading()  {
+  loading.classList.add('show'); 
+  setTimeout(()=> {
+    loading.classList.remove('show'); 
+
+    setTimeout(()=> {
+      page++, 
+      showPosts(); 
+    }, 300)
+
+  }, 1000); 
+}
 
 // show initial posts 
 showPosts(); 
+
+window.addEventListener('scroll', ()=> {
+  // .scrollTop    - amount of scroll from the top
+  // .scrollHeight - cały skrolowalny rozmiar okna / elementu caaały
+  // .clientHeight - widoczny fragment elementu
+
+  const {scrollTop, scrollHeight, clientHeight} = document.documentElement; 
+
+  if(scrollTop + clientHeight >= scrollHeight - 5) {
+    console.log(123);
+    showLoading(); 
+  }
+})
