@@ -29,8 +29,8 @@ select {
   background-color: #a7c5e3;
 }
 
-select:focus, btn:focus {
-  outline: 0; 
+select:focus, button:focus, input:focus {
+  outline: 0;
 }
 
 .settings-btn {
@@ -111,7 +111,7 @@ input {
 
   justify-content: center;
   flex-direction: column; 
-  
+
   position: absolute; 
   top: 0; 
   left: 0; 
