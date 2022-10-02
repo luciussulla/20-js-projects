@@ -84,6 +84,10 @@ h1 {
   cursor: pointer;
 }
 
+.text-box.show {
+  transform: translate(-50%, 0);
+}
+
 main {
   display: grid; 
   grid-template-columns: repeat(4, 1fr); 
@@ -140,3 +144,4 @@ main {
     grid-template-columns: 1fr; 
   }
 }
+
