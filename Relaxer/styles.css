@@ -14,6 +14,7 @@ body {
   align-items: center;
 
   background-color: #afafaf;
+  color: #fff; 
 }
 
 .container {
@@ -67,7 +68,7 @@ body {
 }
 
 .pointer-container {
-  border: 1px solid red; 
+  /* border: 1px solid red;  */
   position: absolute; 
 
   top: -40px; 
@@ -75,10 +76,9 @@ body {
 
   width: 20px; 
   height: 190px; 
-  background: #333; 
+  /* background: #333;  */
   animation: rotate 7.5s linear forwards infinite; 
   transform-origin: bottom center; 
-
 }
 
 @keyframes rotate {
@@ -91,3 +91,28 @@ body {
   }
 }
 
+.container.grow {
+  animation: grow 3s linear forwards; 
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1); 
+  }
+  to {
+    transform: scale(1.2); 
+  } 
+}
+
+.container.shrink {
+  animation: shrink 3s linear forwards; 
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.2); 
+  }
+  to {
+    transform: scale(1); 
+  } 
+}
