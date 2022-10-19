@@ -56,13 +56,13 @@ h1 {
   /* border: 1px solid red;  */
 }
 
-.time > h2 {
+/* .time > h2 {
   border: 1px solid blue; 
 }
 
 .time small:nth-of-type(1) {
   border: 1px solid green; 
-}
+} */
 
 .time h2 {
   margin: 0 0 5px; 
