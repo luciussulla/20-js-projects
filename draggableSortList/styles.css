@@ -49,6 +49,7 @@ body {
 
 .draggable-list li.over .draggable {
   background-color: #eaeaea;
+  opacity: 1; 
 }
 
 .draggable-list .person-name {
